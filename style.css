@@ -1,0 +1,329 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*##############################################################################################################################*/
+
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 25px;
+}
+
+header {
+  
+background: #4776E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+min-height: 100vh;
+}
+
+.content {
+  min-height: 1250px;
+  background-color: #fafafa;
+
+
+  background: #ECE9E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+padding: 50px 0 50px 0;
+}
+
+.content__title {
+  text-align: center;
+  font-family: 'Balsamiq Sans';
+  font-weight: 700;
+  font-size: 36px;
+  color: black;
+  padding: 30px 0 30px 0;
+}
+
+.content__text {
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-size: 18px;
+  color: black;
+}
+
+.header-top {
+  padding: 10px 0;
+}
+.header-top img {
+  width: 60px;
+  height: 60px;
+}
+.header-top__row {
+  display: flex;
+  justify-content: space-between;
+}
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.menu a {
+  text-decoration: none;
+}
+.menu li {
+  margin-left: 20px;
+  font-family: 'Balsamiq Sans';
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  transition: 0.2s;
+}
+.menu li:hover {
+  color: lightgray;
+  transition: 0.2s;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-content__text {
+  margin-top: -200px;
+}
+.header__title {
+  font-family: 'Balsamiq Sans';
+  font-weight: 700;
+  font-size: 38px;
+  color: white;
+  margin-bottom: 20px;
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 1s ease 0s;
+}
+.header__title._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.header__text {
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  max-width: 500px;
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 1s ease 0.3s;
+}
+.header__text._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.header-content__img {
+  max-height: 600px;
+  max-width: 600px;
+  margin-top: 70px;
+}
+
+
+
+._anim-show {
+  transform: translate(0px,50%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+
+._anim-show._active,
+._active ._anim-show {
+  opacity: 1;
+  transform: translate(0px,0px);
+}
+
+._anim-slide-to-right {
+  transform: translate(-120%,0px);
+  opacity: 0;
+  transition: all 1s ease 0s;
+}
+
+._anim-slide-to-right._active,
+._active ._anim-slide-to-right {
+  opacity: 1;
+  transform: translate(0px,0px);
+}
+
+._anim-slide-to-left {
+  transform: translate(120%,0px);
+  opacity: 0;
+  transition: all 1s ease 0s;
+}
+
+._anim-slide-to-left._active,
+._active ._anim-slide-to-left {
+  opacity: 1;
+  transform: translate(0px,0px);
+}
+
+.c1 {
+  transition: all 1s ease 0s;
+}
+
+.c2 {
+  transition: all 1s ease 0.2s;
+}
+.c3 {
+  transition: all 1s ease 0.6s;
+}
+.c4 {
+  transition: all 1s ease 1s;
+}
+.c5 {
+  transition: all 1s ease 1.4s;
+}
+.c6 {
+  transition: all 1s ease 1.8s;
+}
+
+footer {
+  background: #4776E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+min-height: 200px;
+padding: 100px 0 100px 0;
+  color: white;
+  font-family: Nunito;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.footer__row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer__left {
+  flex: 0 0 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__left__item {
+  width: 200px; 
+}
+.footer__left__item__title {
+  font-family: 'Balsamiq Sans';
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: white;
+}
+.footer__left__item__text {
+}
+.footer__right {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__right__list {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.footer__right__list a, .footer__right__list li {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+}
+
+.footer__right__list li {
+  margin-bottom: 5px;
+}
+
+
+.footer__right__list a:hover {
+  color: lightgray;
+  transition: 0.2s;
+}
